@@ -1,0 +1,162 @@
+List는 순서를 보장함
+Set은 중복을 허용하지 않는 컬렉션이지만 순서 보장은 되지 않음
+/*
+enum ColorType {
+  RED(1),
+  Yellow(2),
+  Blue(3);
+  
+  final int code;
+  const ColorType(this.code);
+}
+*/
+void main() {
+ /* var a = 5;
+  var b = a + 2;
+  b = b + 3;
+  print(b);
+  
+  b += 3;
+  b = b + 3;
+  print(b);
+  */
+  /* 
+  var a = 10;
+  var b = 20;
+  var c = 9;
+  var d = 10;
+  
+  print(a < b); //true
+  print(a < c); //false
+  print(a > c);
+  print(a > d);
+  print(a >= d);
+  print(a == d);
+  print(a <= d);
+  
+  var cond = a < b;
+  print(cond.runtimeType); //if (condition = bool값)
+  */
+  
+  
+  /*var c1 = ColorType.RED;
+  print(c1);
+  print(c1.code);
+  
+  Set<int> nums = {3, 9, 12, 41, 42, 43, 45};
+  print(nums.length);
+  print(nums.elementAt(0));
+
+  nums.add(80);
+  print(nums);
+  nums.addAll({100,200,300});
+  print(nums);
+  nums.addAll({120, 130, 140});
+  print(nums);
+  for (var i = 0; i<nums.length;i++) {
+    print(nums.elementAt(i));
+    //print(nums[i]);
+  }
+  */
+ // List<dynamic> lottoNums = [5, 6, 7, "8", 9,10];
+ // print(lottoNums.runtimeType);
+
+ // var snackNames = {'짱구','새우깡','포카칩','포스팁','감자깡','콘칩'};
+  // var find  = snackNames.where((name) => name.length < 3).toSet();
+  // print(find);
+  
+  // var snackNameLength = snackNames.length.map<int>((name) => name.length).toSet();
+  // print(snackNameLength);
+  
+  // var customSnacks = snackNames.map<String>((name) => "$name!").toSet();
+  // print(customSnacks);
+/*
+  var simpleUserInfo = {
+    "name": "하이요",
+    "age": "33",
+    "phone":"123-123-123",
+  };
+  
+  print(simpleUserInfo);
+  print(simpleUserInfo['name']);
+  print(simpleUserInfo['age']);
+  print(simpleUserInfo['phone']);
+  simpleUserInfo['phone'] = '010-5235-2342';
+  print(simpleUserInfo);
+  
+  print(simpleUserInfo.runtimeType);
+*/
+  var a = true;
+  var b = false;
+  
+  var orResult = a || b;
+  var andResult = a && b;
+  var notResult = !a;
+  
+  print(orResult);  //true
+  print(andResult); //false
+  print(notResult); //false
+}
+
+enum Fruit {Apple, Lemon, Grape, Mandarine }
+
+void main() {
+  var a = Fruit.Grape;
+  switch(a){
+    case Fruit.Apple:
+      print("사과선택");
+      break;
+      case Fruit.Lemon:
+      print("레몬선택");
+      break;
+      case Fruit.Grape:
+      print("포도선택");
+      break;
+      case Fruit.Mandarine:
+      print("귤선택");
+      break;
+  }
+}
+
+void main() {
+  for ( var x = 2; x <= 9; x++){
+    for (var y = 1; y <= 9; y++) {
+    print("$x x $y = ${x * y}");
+  }
+    print('');
+  }
+}
+
+var nums= [1, 2, 3, 4, 5];
+  for (var num in nums) {
+    print(num);
+  }
+  nums.forEach((num) => print(num));
+
+  var condition = true;
+  while (condition){
+    print('코드실행');
+    condition = false;
+  }
+
+  var i = 0;
+  while (i < 10){
+  print(i);
+    i++;
+  }
+
+  var output = StringBuffer();
+  var n = 10;
+  for (var y = 0; y < n; y++){
+    for(var x = 0; x < n; x++){
+    var condition = true;
+      if(condition) {
+        output.write('#');
+      }
+      else {
+        output.write(' ');
+      }
+      }
+    output.writeln();
+  }
+      print(output.toString());
