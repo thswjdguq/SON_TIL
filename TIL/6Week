@@ -1,0 +1,62 @@
+void main() {
+  int count = 5;
+
+  for (int i = 0; i < count; i++) {
+    String line = '';
+
+    for (int j = 0; j < count; j++) {
+      if (j == i || j == count - 1 - i) {
+        line += '#';
+      } else {
+        line += ' ';
+      }
+    }
+
+    print(line);
+  }
+}
+
+
+void main() {
+  int count = 20;
+
+  for (int i = 0; i < count; i++) {
+    String line = '';
+    for (int j = 0; j < count; j++) {
+      // 테두리 조건
+      if (i == 0 || i == count - 1 || j == 0 || j == count - 1) {
+        line += '# ';
+      }
+      // X자 조건
+      else if (j == i || j == count - 1 - i) {
+        line += '# ';
+      }
+      // 나머지 내부
+      else {
+        line += '  ';
+      }
+    }
+    print(line.trim());
+  }
+}
+
+void main() {
+  var n = 3;
+  for ( var y = 0; y < n; y++){
+    var line = "";
+    var width = n * 2 - 1;
+    for(var x = 0; x <width * n; x++){  
+      var condition = 
+       (x % width) - (n-1) == y ||
+        n - (x % width) - 1 == y;
+      
+      if(condition){
+      line += "#";
+      }
+      else {
+        line += " ";
+      }
+  }
+    print(line);
+  }
+}
