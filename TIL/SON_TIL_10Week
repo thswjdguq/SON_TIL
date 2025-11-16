@@ -1,0 +1,47 @@
+// 추상화: 공통 규칙만 정의하는 추상 클래스
+abstract class Animal {
+  // 캡슐화: private 변수와 getter
+  String _name;
+  String get name => _name;
+
+  Animal(this._name);
+
+  // 공통 동작 (부모 클래스에서 구현)
+  void eat() {
+    print("$name이(가) 먹고 있습니다.");
+  }
+
+  // 추상 메서드: 자식 클래스가 반드시 구현해야 함
+  void makeSound();
+}
+
+// 자식 클래스 (상속 + 다형성)
+class Dog extends Animal {
+  Dog(String name) : super(name);
+
+  @override
+  void makeSound() {
+    print("$name: 월월!");
+  }
+}
+
+class Cat extends Animal {
+  Cat(String name) : super(name);
+
+  @override
+  void makeSound() {
+    print("$name: 먀아오!");
+  }
+}
+
+void main() {
+  Dog dog = Dog("앙이");
+  Cat cat = Cat("아옭이");
+
+  // 다형성: 부모 타입으로 묶어서 사용
+  List<Animal> animals = [dog, cat];
+  for (var animal in animals) {
+    animal.makeSound(); // 각 클래스마다 다른 소리
+    animal.eat();       // 공통 동작은 부모 클래스에서 제공
+  }
+}
